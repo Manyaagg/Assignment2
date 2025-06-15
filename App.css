@@ -1,0 +1,200 @@
+App.css
+
+:root {
+  --bg-color: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-color: #1f1f1f;
+  --input-bg: #ffffff;
+  --btn-bg: #4b9ce2;
+  --btn-text: #ffffff;
+  --btn-hover: #357abd;
+  --task-bg: #f7f9fa;
+  --task-complete: #999999;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease-in-out;
+  --bg-gradient: linear-gradient(to bottom right, #e8f0fe, #fdfbfb);
+}
+
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #e4e4e4;
+  --input-bg: #2a2a2a;
+  --btn-bg: #6ca0f6;
+  --btn-text: #ffffff;
+  --btn-hover: #4a7fcb;
+  --task-bg: #2c2c2c;
+  --task-complete: #666666;
+  --shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+  --bg-gradient: linear-gradient(to bottom right, #1a1a1a, #222831);
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  min-height: 100vh;
+  transition: var(--transition);
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem 1rem;
+}
+
+.todo-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 500px;
+  transition: var(--transition);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.theme-toggle {
+  padding: 0.5rem 1rem;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--btn-hover);
+}
+
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.input-row button {
+  padding: 0.75rem 1.2rem;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.input-row button:hover {
+  background: var(--btn-hover);
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters select {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: var(--input-bg);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--task-bg);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.task.completed span {
+  text-decoration: line-through;
+  color: var(--task-complete);
+}
+
+.task span {
+  flex: 1;
+}
+
+.task input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: var(--input-bg);
+  color: var(--text-color);
+}
+
+.task button {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: #ff4d4d;
+  cursor: pointer;
+  margin-left: 0.75rem;
+  transition: var(--transition);
+}
+
+.task button:hover {
+  transform: scale(1.2);
+}
+
+.no-tasks {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  margin-top: 1rem;
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
